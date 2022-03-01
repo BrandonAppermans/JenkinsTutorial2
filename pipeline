@@ -1,9 +1,14 @@
 pipeline {
     agent any
+    
+    tools{
+     maven 'MavenJenkins'
+    }
 
     stages {
         stage('Build') {
             steps {
+                
                 sh 'mvn clean install'
             }
         }
